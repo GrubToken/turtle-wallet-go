@@ -39,7 +39,7 @@ var (
 	rpcPassword = ""
 
 	cmdWalletd     *exec.Cmd
-	cmdTurtleCoind *exec.Cmd
+	cmdGrubMined *exec.Cmd
 
 	// WalletdOpenAndRunning is true when turtle-service is running with a wallet open
 	WalletdOpenAndRunning = false
@@ -272,7 +272,7 @@ func SaveWallet() (err error) {
 func StartWalletd(walletPath string, walletPassword string, useRemoteNode bool, useCheckpoints bool, daemonAddress string, daemonPort string) (err error) {
 
 	if isWalletdRunning() {
-		errorMessage := "turtle-service is already running in the background.\nPlease close it via "
+		errorMessage := "GRUB-service is already running in the background.\nPlease close it via "
 
 		if isPlatformWindows {
 			errorMessage += "the task manager"
